@@ -16,7 +16,7 @@ cols_to_scale = model_data['cols_to_scale']
 def prepare_input(age, loan_purpose, loan_type, num_open_accounts, loan_tenure_months,
                   residence_type, income, loan_amount, loan_to_income_ratio,
                   delinquent_months, total_loan_months, delinquency_ratio,
-                  total_dpd, avg_dpd_per_delinquency, credit_utilization_ratio):
+                  total_dpd, avg_dpd_per_deliquency, credit_utilization_ratio):
     input_data = {
         'age': age,
         'income': income,
@@ -26,7 +26,7 @@ def prepare_input(age, loan_purpose, loan_type, num_open_accounts, loan_tenure_m
         'total_loan_months': total_loan_months,
         'delinquent_months': delinquent_months,
         'total_dpd': total_dpd,
-        'avg_dpd_per_delinquency': avg_dpd_per_delinquency,
+        'avg_dpd_per_deliquency': avg_dpd_per_deliquency,
         'delinquency_ratio': delinquency_ratio,
         'credit_utilization_ratio': credit_utilization_ratio,
         'number_of_open_accounts': num_open_accounts,
@@ -72,12 +72,12 @@ def prepare_input(age, loan_purpose, loan_type, num_open_accounts, loan_tenure_m
 def predict(age, loan_purpose, loan_type, num_open_accounts, loan_tenure_months,
             residence_type, income, loan_amount, loan_to_income_ratio,
             delinquent_months, total_loan_months, delinquency_ratio,
-            total_dpd, avg_dpd_per_delinquency, credit_utilization_ratio):
+            total_dpd, avg_dpd_per_deliquency, credit_utilization_ratio):
     input_df = prepare_input(
         age, loan_purpose, loan_type, num_open_accounts, loan_tenure_months,
         residence_type, income, loan_amount, loan_to_income_ratio,
         delinquent_months, total_loan_months, delinquency_ratio,
-        total_dpd, avg_dpd_per_delinquency, credit_utilization_ratio
+        total_dpd, avg_dpd_per_deliquency, credit_utilization_ratio
     )
 
     return calculate_credit_score(input_df)
